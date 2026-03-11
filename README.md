@@ -4,8 +4,8 @@ Renamed solution with functional starter projects:
 - `eCommerce.Models`
 - `eCommerce.DataAccess`
 - `eCommerce.Utility`
-- `eCommerceWeb`
+- `eCommerceWeb` (MVC app)
 
-Sample APIs:
-- `GET /products`
-- `GET /cart/total`
+Sample web pages:
+- `/` (home)
+- `/Product` (product list)
