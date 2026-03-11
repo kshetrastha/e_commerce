@@ -1,27 +1,28 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System;
-using System.Collections.Generic;
+﻿using BulkyBook.Utility;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BulkyBook.Models {
-	public class ApplicationUser:IdentityUser {
-		[Required]
-        public string Name { get; set; }
+namespace BulkyBook.Models;
 
-		public string? StreetAddress { get; set; }
-		public string? City { get; set; }
-		public string? State { get; set; }
-		public string? PostalCode { get; set; }
-        public int? CompanyId { get; set; }
-        [ForeignKey("CompanyId")]
-        [ValidateNever]
-        public Company? Company { get; set; }
-        [NotMapped]
-        public string Role { get; set; }
-    }
+public class ApplicationUser : IdentityUser
+{
+    [Required]
+    public string FullName { get; set; }
+
+    public string? StreetAddress { get; set; }
+    public string? City { get; set; }
+    public string? State { get; set; }
+    public string? PostalCode { get; set; }
+
+    public bool IsDeleted { get; set; }
+    public Status Status { get; set; }
+    public string? ReferralCode { get; set; }
+
+    //public int? CompanyId { get; set; }
+    //[ForeignKey("CompanyId")]
+    //[ValidateNever]
+    //public Company? Company { get; set; }
+    [NotMapped]
+    public string Role { get; set; }
 }
